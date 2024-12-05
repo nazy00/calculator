@@ -5,12 +5,13 @@ version: '3'
 services:
   frontend:
     # Specify the build context for the frontend
-    build:
+    build: ./frontend
     # Map the host port to the container port
     ports:
+      ["3000:3000"]
     # Specify dependencies (if applicable)
     depends_on:
-
+      [backend]
     # Additional options (uncomment and configure as needed):
     
     # Specify environment variables if needed
@@ -24,10 +25,10 @@ services:
 
   backend:
     # Specify the build context for the backend
-    build:
+    build: ./backend
     # Map the host port to the container port
     ports:
-    
+      ["5000:5000"]
     # Additional options (uncomment and configure as needed):
     
     # Specify environment variables if needed

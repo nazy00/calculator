@@ -1,0 +1,83 @@
+# TODO: Define the Workflow Name
+name: Calculator workflow
+
+# TODO: Define triggers for the workflow
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    # TODO: Define a job for building and testing the frontend
+    frontend:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./frontend
+        steps:
+            # TODO: Checkout code
+            - uses: actions/checkout@v4
+            # TODO: Setup Node.js
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 23
+            # TODO: Install dependencies
+            - run: npm install
+            # TODO: Run tests
+            # - run: npm run test
+            # TODO: Build the React app
+            - run: npm run build
+
+    # TODO: Define a job for building and testing the backend
+    backend:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./backend
+        steps:
+            # TODO: Checkout code
+            - uses: actions/checkout@v4
+            # TODO: Setup Python
+            - uses: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
+            # TODO: Install dependencies
+            - run: pip install -r requirements.txt
+            # TODO: Run tests
+            - run: python -m unittest -v test_app.py
+
+    # TODO: Define a job for building and pushing Docker images
+    docker:
+        # Run this job only when 'frontend' & 'backend' stages are sucessfully completed
+        needs:
+            - frontend
+            - backend
+        runs-on: ubuntu-latest
+        steps:
+            # TODO: Checkout code
+            - uses: actions/checkout@v4
+            # TODO: Setup Docker
+            - uses: docker/login-action@v3
+              with:
+                  username: ${{ secrets.DOCKER_USERNAME }}
+                  password: ${{ secrets.DOCKER_PASSWORD }}
+            # TODO: Build and push frontend Docker image (if on main branch)
+            - uses: docker/build-push-action@v6
+              with:
+                  context: ./frontend
+                  push: true
+                  tags: ${{ secrets.DOCKER_USERNAME }}/calculator-frontend:latest
+            # TODO: Build and push backend Docker image (if on main branch)
+            - uses: docker/build-push-action@v6
+              with:
+                  context: ./backend
+                  push: true
+                  tags: ${{ secrets.DOCKER_USERNAME }}/calculator-backend:latest
+
+    # OPTIONAL: Define a deployment job (if applicable)
+    # deploy:
+    #   needs: docker
+    #   runs-on: ubuntu-latest
+    #   steps:
+    #     # TODO: Add deployment steps
