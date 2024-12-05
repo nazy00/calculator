@@ -1,0 +1,47 @@
+# This is just a template placeholder docker-compose file. Use relevant sections which are applicable, 
+# and feel free to customize.
+version: '3'
+
+services:
+  frontend:
+    # Specify the build context for the frontend
+    build:
+    # Map the host port to the container port
+    ports:
+    # Specify dependencies (if applicable)
+    depends_on:
+
+    # Additional options (uncomment and configure as needed):
+    
+    # Specify environment variables if needed
+    # environment:
+    
+    # Specify volume for live code reloading (optional)
+    # volumes:
+    
+    # Specify the command to run the development server (if different from Dockerfile)
+    # command:
+
+  backend:
+    # Specify the build context for the backend
+    build:
+    # Map the host port to the container port
+    ports:
+    
+    # Additional options (uncomment and configure as needed):
+    
+    # Specify environment variables if needed
+    # environment:
+    
+    # Specify volume for live code reloading (optional)
+    # volumes:
+    
+    # Specify the command to run the development server (if different from Dockerfile)
+    # command:
+
+# Additional components (uncomment and configure as needed):
+# Define a custom network (if applicable)
+# networks:
+
+# Define volumes (if applicable)
+# volumes:
