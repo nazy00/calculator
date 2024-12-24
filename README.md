@@ -8,22 +8,18 @@
 
 - **Brief project description:**
 
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
+Calculator application built as a multi-container setup with separate frontend and backend containers. This project was an experiment to explore DevOps principles and containerization.
 
 - **Files implemented:**
 
-- `README.md`: Provides context about the project and key learnings.
-- `backend/Dockerfile`: Configuration for the backend container image.
-- `frontend/Dockerfile`: Configuration for the frontend container image.
-- `docker-compose.yaml`: Defines multi-container setup for local development.
-- `.github/workflows/github-actions.yml`: GitHub Actions workflow for CI/CD pipeline.
-- `.gitignore`: Configures files and folders to exclude from version control.
-- `backend/requirements.txt`: Lists Python dependencies for the backend.
-- `backend/test_app.py`: Backend unit testing script.
+  - `README.md`: Provides context about the project and key learnings.
+  - `backend/Dockerfile`: Configuration for the backend container image.
+  - `frontend/Dockerfile`: Configuration for the frontend container image.
+  - `docker-compose.yaml`: Defines multi-container setup for local development.
+  - `.github/workflows/github-actions.yml`: GitHub Actions workflow for CI/CD pipeline.
+  - `.gitignore`: Configures files and folders to exclude from version control.
+  - `backend/requirements.txt`: Lists Python dependencies for the backend.
+  - `backend/test_app.py`: Backend unit testing script.
 
 
 ### Docker Implementation
