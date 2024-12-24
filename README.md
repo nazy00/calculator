@@ -6,7 +6,7 @@
 
 ### Project Overview
 
-- **Brief project description:** What is the purpose of your application?
+- **Brief project description:**
 
 <!-- Include explanation here -->
 <!-- Include explanation here -->
@@ -14,20 +14,16 @@
 <!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
 
 
-- **Which files are you implmenting? and why?:**
+- **Files implemented:**
 
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
-
-- _**Any other explanations for personal note taking.**_
-
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
+- `README.md`: Provides context about the project and key learnings.
+- `backend/Dockerfile`: Configuration for the backend container image.
+- `frontend/Dockerfile`: Configuration for the frontend container image.
+- `docker-compose.yaml`: Defines multi-container setup for local development.
+- `.github/workflows/github-actions.yml`: GitHub Actions workflow for CI/CD pipeline.
+- `.gitignore`: Configures files and folders to exclude from version control.
+- `backend/requirements.txt`: Lists Python dependencies for the backend.
+- `backend/test_app.py`: Backend unit testing script.
 
 
 ### Docker Implementation
@@ -35,41 +31,30 @@
 **Explain your Dockerfiles:**
 
 - **Backend Dockerfile** (Python API):
-    - Here please explain the `Dockerfile` created for the Python Backend API. 
-    - This can be a simple explanation which serves as a reference guide, or revision to you when read back the readme in future. 
 
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
+  - Based on Alpine Linux 3.20 with Python 3.12.
+  - Configures working directory and copies application files.
+  - Installs dependencies via pip.
+  - Exposes required ports.
 
 - **Frontend Dockerfile** (React App):
-    - Similar to the above section, please explain the Dockerfile created for the React Frontend Web Application. 
 
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
-**Use this section to document your choices and steps for building the Docker images.**
-
+  - Based on Alpine Linux 3.20 with Node.js 23.
+  - Configures working directory and copies dependency files.
+  - Installs dependencies via npm and builds the React app.
+  - Exposes required ports.
+  - Runs the React app with npm start.
 
 ### Docker Compose YAML Configuration
 
-**Break down your `docker-compose.yml` file:**
-
-- **Services:** List the services defined. What do they represent?
-- **Networking:** How do the services communicate with each other?
-- **Volumes:** Did you use any volume mounts for persistent data?
-- **Environment Variables:** Did you define any environment variables for configuration? 
+- **Services:** TODO
+- **Networking:** TODO
+- **Volumes:** TODO
+- **Environment Variables:** TODO
 
 **Use this section to explain how your services interact and are configured within `docker-compose.yml`.**
 
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
+TODO
 
 
 ### CI/CD Pipeline (YAML Configuration)
